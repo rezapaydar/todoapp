@@ -1,0 +1,19 @@
+<mat-sidenav-container color="primary" class="row" style="height:100vh;">
+  <mat-sidenav Start opened #drawer (openedStart)="loaded(drawer)" class="col-12 col-sm-9 col-md-5 col-lg-3"
+    mode="side">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            یادداشت ها
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>I'm visible because I am open</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+  <mat-sidenav-content class="col-12 col-lg-9" style="background: white;">
+    <app-header></app-header>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
