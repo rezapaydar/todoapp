@@ -10,7 +10,7 @@ export class AppComponent {
   isLoggedIn:boolean=false;
   title = 'taskmanagmentapp';
   dirvalue: Direction='ltr';
-  defaultSetting={lang:'fa',dir:this.dirvalue}
+  defaultSetting={lang:'fa',nikname:'guest'}
   isLinear = false;
   panelOpenState = false;
   firstFormGroup:any;

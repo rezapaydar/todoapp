@@ -1,43 +1,97 @@
-
-<main *ngIf="isLoggedIn">
- <app-aside></app-aside>
-</main>
-
-<main *ngIf="!isLoggedIn" style="background:url('assets/img/Frame.png')100% 100%;height:100vh;width:100%;display:flex;justify-content:center;">
-   <div style="width:50%;height:50%">
-      <mat-card>
-         <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-            {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-          </button> -->
-          <mat-stepper [linear]="isLinear" >
-            <mat-step [stepControl]="firstFormGroup">
-
-               <video autoplay loop>
-                  <source src="assets/mp4/vid1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-
-                <div>
-                  <button mat-raised-button matStepperNext>Next</button>
-                </div>
-           
-            </mat-step>
-            <mat-step [stepControl]="secondFormGroup">
-               <video autoplay loop>
-                  <source src="assets/mp4/vid2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-               <button mat-raised-button matStepperNext>Next</button>
-            </mat-step>
-            <mat-step label="start">
-               <video autoplay loop>
-                  <source src="assets/mp4/vid3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-               <button mat-raised-button matStepperNext>Next</button>
-            </mat-step>
-          </mat-stepper>
-          
-      </mat-card>
+<nav class="navbar">
+   <div id="trapezoid">
+      <a class="sub-home" href="#">Home</a>
+      <a href="#About" class="expandHome">About</a>
+      <div class="subnav">
+         <button class="subnavbtn">Clients<i class="fa fa-caret-down"></i></button>
+         <div class="subnav-content">
+            <div id="subnav-trapezoid">
+               <a href="#Clients">Burger King</a>
+               <a href="#Clients">Southwest Airlines</a>
+               <a href="#Clients">Levi Strauss</a>
+            </div>
+         </div>
+      </div>
+      <div class="subnav">
+         <button class="subnavbtn">Services<i class="fa fa-caret-down"></i></button>
+         <div class="subnav-content">
+            <div class="subnav-trapezoid">
+               <a href="#Services">Print Design</a>
+               <a href="#Services">Web Design</a>
+               <a href="#Services">Mobile App Development</a>
+            </div>
+         </div>
+      </div>
+      <a href="https://codepen.io/pec-man" class="expandHome">Contact</a>
    </div>
-</main>
+</nav>
+
+<div class="container-landing-page">
+
+   <img src="assets/img/Asset4.png" alt="rocket image" />
+   <section class="text-landing-page">
+      <h1 class="title">title text</h1>
+      <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus nisi, illum sunt
+         placeat natus et, quidem, distinctio deserunt vero ullam aspernatur nobis nesciunt praesentium magnam
+         cupiditate. Ea, tenetur dolor.</p>
+      <main class="example-form">
+         <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>nikname</mat-label>
+            <input matInput class="nikname" placeholder="nikname" [(ngModel)]="defaultSetting.nikname">
+         </mat-form-field>
+
+         <mat-form-field appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select class="lang" [(ngModel)]="defaultSetting.lang">
+               <mat-option>None</mat-option>
+               <mat-option value="en">Option 1</mat-option>
+               <mat-option value="fa">Option 2</mat-option>
+            </mat-select>
+         </mat-form-field>
+
+      </main>
+      <button class="go-todolist">get in</button>
+   </section>
+</div>
+
+<style>
+   section.text-landing-page {
+      width: 50%;
+      display: grid;
+      color: white;
+      grid-gap: 1rem;
+      grid-template: auto/repeat(4, auto);
+      grid-template-areas: 'title title title title'
+         'para para para para'
+         'nikname langselect langselect .'
+         'button button button .';
+   }
+
+   h1.title {
+      font-size: 100px;
+      color: white;
+      padding-bottom: 10px;
+      grid-area: title
+   }
+
+   p.paragraph {
+      grid-area: para;
+   }
+
+   section.example-form {
+      color: aliceblue;
+   }
+
+
+   input.nikname {
+      grid-area: nikname;
+   }
+
+   body>app-root>div>section>main>mat-form-field.mat-form-field.ng-tns-c67-1.mat-primary.mat-form-field-type-mat-select.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.ng-untouched.ng-pristine.ng-valid.mat-form-field-should-float>div>div.mat-form-field-flex.ng-tns-c67-1 {
+      grid-area: langselect;
+   }
+
+   button.go-todolist {
+      grid-area: button
+   }
+</style>
